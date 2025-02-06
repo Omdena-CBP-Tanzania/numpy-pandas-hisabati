@@ -29,7 +29,7 @@ def create_sample_csv():
     sample_data = {
         'Name': ['Alice', 'Bob', 'Charlie', 'David'],
         'Age': [25, np.nan, 30, 35],
-        'Salary': [50000, 60000, np.nan, 75000]
+        'Salary': [50000, 60000, np.nan, 75000],
     }
     df = pd.DataFrame(sample_data)
     df.to_csv('sample_data.csv', index=False)
