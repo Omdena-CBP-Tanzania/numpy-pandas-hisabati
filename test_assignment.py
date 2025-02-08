@@ -9,12 +9,14 @@ def test_create_1d_array():
     assert isinstance(arr, np.ndarray), "Must return a NumPy array"
     assert arr.ndim == 1, "Must be a 1D array"
     assert np.array_equal(arr, np.array([1, 2, 3, 4, 5])), "Array must be [1, 2, 3, 4, 5]"
+    print("Ttest_create_1d_array() passed")
 
 def test_create_2d_array():
     arr = assignment.create_2d_array()
     assert isinstance(arr, np.ndarray), "Must return a NumPy array"
     assert arr.ndim == 2, "Must be a 2D array"
     assert arr.shape == (3, 3), "Array must have shape (3,3)"
+    print("test_create_2d_array() passed")
 
 def test_array_operations():
     arr = np.array([1, 2, 3, 4, 5])
@@ -23,6 +25,7 @@ def test_array_operations():
     assert np.isclose(result[0], 3), "Mean should be 3"
     assert np.isclose(result[1], 1.4142, atol=0.1), "Standard deviation check"
     assert result[2] == 5, "Max value should be 5"
+    print("test_array_operations() passed")
 
 def create_sample_csv():
     """Create a sample CSV file for testing"""
@@ -44,6 +47,7 @@ def test_read_csv_file():
     assert set(df.columns) == {'Name', 'Age', 'Salary'}, "Incorrect columns"
     
     os.remove('sample_data.csv')
+    print("test_read_csv_file() passed")
 
 def test_handle_missing_values():
     df = create_sample_csv()
@@ -54,6 +58,7 @@ def test_handle_missing_values():
     assert cleaned_df['Salary'].isna().sum() == 0, "Salary column should have no missing values"
     
     os.remove('sample_data.csv')
+    print("test_handle_missing_values() passed")
 
 def test_select_data():
     df = create_sample_csv()
@@ -63,6 +68,7 @@ def test_select_data():
     assert len(selected_df) > 0, "Selected DataFrame should not be empty"
     
     os.remove('sample_data.csv')
+    print("test_select_data() passed")
 
 def test_rename_columns():
     df = create_sample_csv()
@@ -72,8 +78,10 @@ def test_rename_columns():
     assert set(renamed_df.columns) != {'Name', 'Age', 'Salary'}, "Columns should be renamed"
     
     os.remove('sample_data.csv')
+    print("test_rename_columns() passed")
 
 # Existing NumPy tests from previous artifact remain the same
+'''
 def test_create_1d_array():
     arr = assignment.create_1d_array()
     assert isinstance(arr, np.ndarray), "Must return a NumPy array"
@@ -93,3 +101,5 @@ def test_array_operations():
     assert np.isclose(result[0], 3), "Mean should be 3"
     assert np.isclose(result[1], 1.4142, atol=0.1), "Standard deviation check"
     assert result[2] == 5, "Max value should be 5"
+
+'''
