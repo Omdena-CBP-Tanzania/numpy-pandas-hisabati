@@ -1,13 +1,17 @@
 import numpy as np
 import pandas as pd
 
-def create_1d_array():
+def create_1d_array(): 
     """
     Create a 1D NumPy array with values [1, 2, 3, 4, 5]
     Returns:
         numpy.ndarray: 1D array
     """
-    pass
+    arr = np.array([1, 2, 3, 4, 5])
+    return arr
+
+print(create_1d_array())
+pass
 
 def create_2d_array():
     """
@@ -15,7 +19,11 @@ def create_2d_array():
     Returns:
         numpy.ndarray: 2D array
     """
-    pass
+    arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    return arr
+
+print(create_2d_array())
+pass
 
 def array_operations(arr):
     """
@@ -26,7 +34,14 @@ def array_operations(arr):
     Returns:
         tuple: (mean, std_dev, max_value)
     """
-    pass
+    arr = np.array(arr)
+    mean = np.mean(arr)
+    std_dev = np.std(arr)
+    max_value = np.max(arr)
+    return (mean, std_dev, max_value)
+
+print(array_operations([1, 2, 3, 4, 5]))
+pass
 
 def read_csv_file(filepath):
     """
@@ -36,7 +51,11 @@ def read_csv_file(filepath):
     Returns:
         pandas.DataFrame: Loaded dataframe
     """
-    pass
+    df = pd.read_csv(filepath)
+    return df
+
+print(read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv"))
+pass
 
 def handle_missing_values(df):
     """
@@ -46,7 +65,14 @@ def handle_missing_values(df):
     Returns:
         pandas.DataFrame: Cleaned dataframe
     """
-    pass
+    print("Missing values per column:")
+    print(df.isnull().sum())
+    df.fillna(0, inplace=True)
+
+    return df
+
+print(handle_missing_values(read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")))
+pass
 
 def select_data(df):
     """
@@ -54,7 +80,14 @@ def select_data(df):
     Returns:
         pandas.DataFrame: Selected data
     """
-    pass
+    df = df.loc[df['Age'] > 30, ['Name', 'Age', 'Salary']]
+
+    return df
+
+df = read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")
+result = select_data(df)
+print(result)
+pass
 
 def rename_columns(df):
     """
@@ -62,4 +95,10 @@ def rename_columns(df):
     Returns:
         pandas.DataFrame: DataFrame with renamed columns
     """
-    pass
+    df.rename(columns={'Name': 'Full Name', 'Salary': 'Annual Salary'}, inplace=True)
+    return df
+
+df = read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")
+result = rename_columns(df)
+print(result)
+pass
