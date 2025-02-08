@@ -36,7 +36,7 @@ def read_csv_file(filepath):
     Returns:
         pandas.DataFrame: Loaded dataframe
     """
-    pass
+    return pd.read_csv(filepath)
 
 def handle_missing_values(df):
     """

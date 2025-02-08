@@ -107,3 +107,4 @@ def test_array_operations():
 test_create_1d_array()
 test_create_2d_array()
 test_array_operations()
+test_read_csv_file()
