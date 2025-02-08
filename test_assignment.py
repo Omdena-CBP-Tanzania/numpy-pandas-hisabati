@@ -9,7 +9,7 @@ def test_create_1d_array():
     assert isinstance(arr, np.ndarray), "Must return a NumPy array"
     assert arr.ndim == 1, "Must be a 1D array"
     assert np.array_equal(arr, np.array([1, 2, 3, 4, 5])), "Array must be [1, 2, 3, 4, 5]"
-    print("Ttest_create_1d_array() passed")
+    print("test_create_1d_array() passed")
 
 def test_create_2d_array():
     arr = assignment.create_2d_array()
@@ -103,3 +103,5 @@ def test_array_operations():
     assert result[2] == 5, "Max value should be 5"
 
 '''
+# Run the tests
+test_create_1d_array()
