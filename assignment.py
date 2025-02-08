@@ -53,7 +53,7 @@ def handle_missing_values(df):
         pandas.DataFrame: Cleaned DataFrame with missing values handled.
     """
     # Step 1: Identify number of missing values
-    missing_values = df.isnull().sum()
+    df.isnull().sum()
     
     # Step 2: Fill missing values
     for column in df.columns:
