@@ -38,15 +38,31 @@ def read_csv_file(filepath):
     """
     return pd.read_csv(filepath)
 
+import pandas as pd
+
 def handle_missing_values(df):
     """
-    Handle missing values in the DataFrame
-    1. Identify number of missing values
-    2. Fill missing values with appropriate method
+    Handle missing values in the DataFrame.
+    1. Identify number of missing values.
+    2. Fill missing values with appropriate method.
+    
+    Args:
+        df (pandas.DataFrame): Input DataFrame with missing values.
+    
     Returns:
-        pandas.DataFrame: Cleaned dataframe
+        pandas.DataFrame: Cleaned DataFrame with missing values handled.
     """
-    pass
+    # Step 1: Identify number of missing values
+    missing_values = df.isnull().sum()
+    
+    # Step 2: Fill missing values
+    for column in df.columns:
+        if df[column].dtype in ['int64', 'float64']:  # Numeric columns
+            df[column].fillna(df[column].mean(), inplace=True)
+        else:  # Non-numeric columns 
+            df[column].fillna(df[column].mode()[0], inplace=True)  # Fill with the most frequent value
+    return df
+    
 
 def select_data(df):
     """
@@ -54,7 +70,7 @@ def select_data(df):
     Returns:
         pandas.DataFrame: Selected data
     """
-    pass
+    return df[['Name', 'Age']]
 
 def rename_columns(df):
     """
