@@ -26,7 +26,7 @@ def array_operations(arr):
     Returns:
         tuple: (mean, std_dev, max_value)
     """
-    pass
+    return arr.mean(), arr.std(), arr.max()
 
 def read_csv_file(filepath):
     """
