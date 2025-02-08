@@ -93,3 +93,5 @@ def test_array_operations():
     assert np.isclose(result[0], 3), "Mean should be 3"
     assert np.isclose(result[1], 1.4142, atol=0.1), "Standard deviation check"
     assert result[2] == 5, "Max value should be 5"
+
+    

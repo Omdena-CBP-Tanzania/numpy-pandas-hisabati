@@ -66,8 +66,14 @@ def handle_missing_values(df):
         pandas.DataFrame: Cleaned dataframe
     """
     print("Missing values per column:")
-    print(df.isnull().sum())
-    df.fillna(0, inplace=True)
+    print(df.isnull().sum())   # identify missing values per column
+    
+    for column in df.columns:
+        if df[column].dtype in ['int64', 'float64']: # check if column is numeric
+            df[column] = df[column].fillna(df[column].mean()) # fill missing values with mean
+
+        else: # non-numeric columns
+            df[column] = df[column].fillna(df[column].mode()[0]) # fill missing values with mode
 
     return df
 
