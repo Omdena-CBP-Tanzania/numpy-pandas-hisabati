@@ -78,4 +78,4 @@ def rename_columns(df):
     Returns:
         pandas.DataFrame: DataFrame with renamed columns
     """
-    pass
+    return df.rename(columns={'Name': 'Full Name', 'Age': 'Years'})
