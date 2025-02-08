@@ -1,6 +1,9 @@
 name: Numpy and Pandas Assignment Autograder
 
-on: [push]
+#on: [push]
+on:
+  - push
+  - pull_request  # Triggers on push and pull requests
 
 jobs:
   grade:
