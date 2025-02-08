@@ -105,3 +105,4 @@ def test_array_operations():
 '''
 # Run the tests
 test_create_1d_array()
+test_create_2d_array()

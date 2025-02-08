@@ -15,8 +15,8 @@ def create_2d_array():
     Returns:
         numpy.ndarray: 2D array
     """
-    pass
-
+    return np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+ 
 def array_operations(arr):
     """
     Perform basic array operations:
