@@ -11,7 +11,7 @@ def create_1d_array():
     return arr
 
 print(create_1d_array())
-pass
+
 
 def create_2d_array():
     """
@@ -23,7 +23,7 @@ def create_2d_array():
     return arr
 
 print(create_2d_array())
-pass
+
 
 def array_operations(arr):
     """
@@ -41,7 +41,7 @@ def array_operations(arr):
     return (mean, std_dev, max_value)
 
 print(array_operations([1, 2, 3, 4, 5]))
-pass
+
 
 def read_csv_file(filepath):
     """
@@ -55,7 +55,7 @@ def read_csv_file(filepath):
     return df
 
 print(read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv"))
-pass
+
 
 def handle_missing_values(df):
     """
@@ -78,7 +78,7 @@ def handle_missing_values(df):
     return df
 
 print(handle_missing_values(read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")))
-pass
+
 
 def select_data(df):
     """
@@ -93,7 +93,7 @@ def select_data(df):
 df = read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")
 result = select_data(df)
 print(result)
-pass
+
 
 def rename_columns(df):
     """
@@ -107,4 +107,4 @@ def rename_columns(df):
 df = read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")
 result = rename_columns(df)
 print(result)
-pass
+
