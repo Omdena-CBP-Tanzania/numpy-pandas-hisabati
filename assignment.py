@@ -54,7 +54,7 @@ def read_csv_file(filepath):
     df = pd.read_csv(filepath)
     return df
 
-print(read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv"))
+
 
 
 def handle_missing_values(df):
@@ -77,7 +77,7 @@ def handle_missing_values(df):
 
     return df
 
-print(handle_missing_values(read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")))
+
 
 
 def select_data(df):
@@ -90,7 +90,7 @@ def select_data(df):
 
     return df
 
-df = read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")
+df = read_csv_file(filepath)
 result = select_data(df)
 print(result)
 
@@ -104,7 +104,7 @@ def rename_columns(df):
     df.rename(columns={'Name': 'Full Name', 'Salary': 'Annual Salary'}, inplace=True)
     return df
 
-df = read_csv_file("C:/Users/YYY/Omdena_numpy_pandas_assignment/numpy-pandas-hisabati/data/sample-data.csv")
+df = read_csv_file(filepath)
 result = rename_columns(df)
 print(result)
 
