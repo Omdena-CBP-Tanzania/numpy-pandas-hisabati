@@ -43,7 +43,7 @@ def array_operations(arr):
 print(array_operations([1, 2, 3, 4, 5]))
 
 
-def read_csv_file(filepath):
+def read_csv_file(filepath=None):
     """
     Read a CSV file using Pandas
     Args:
@@ -51,10 +51,11 @@ def read_csv_file(filepath):
     Returns:
         pandas.DataFrame: Loaded dataframe
     """
-    df = pd.read_csv(filepath)
-    return df
+    df = pd.read_csv('data/sample-data.csv') # read csv file
+    
+    df = df[['Name', 'Age', 'Salary']] # select specific columns
 
-
+    return df.head(4) # return first 4 rows
 
 
 def handle_missing_values(df):
@@ -78,8 +79,6 @@ def handle_missing_values(df):
     return df
 
 
-
-
 def select_data(df):
     """
     Select specific columns and rows from DataFrame
@@ -90,7 +89,7 @@ def select_data(df):
 
     return df
 
-df = read_csv_file(filepath)
+df = read_csv_file('data/sample-data.csv')
 result = select_data(df)
 print(result)
 
@@ -104,7 +103,7 @@ def rename_columns(df):
     df.rename(columns={'Name': 'Full Name', 'Salary': 'Annual Salary'}, inplace=True)
     return df
 
-df = read_csv_file(filepath)
+df = read_csv_file('data/sample-data.csv')
 result = rename_columns(df)
 print(result)
 

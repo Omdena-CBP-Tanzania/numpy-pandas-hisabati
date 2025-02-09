@@ -44,6 +44,7 @@ def test_read_csv_file():
     assert set(df.columns) == {'Name', 'Age', 'Salary'}, "Incorrect columns"
     
     os.remove('sample_data.csv')
+    
 
 def test_handle_missing_values():
     df = create_sample_csv()
@@ -54,6 +55,7 @@ def test_handle_missing_values():
     assert cleaned_df['Salary'].isna().sum() == 0, "Salary column should have no missing values"
     
     os.remove('sample_data.csv')
+    
 
 def test_select_data():
     df = create_sample_csv()
