@@ -82,7 +82,7 @@ def test_rename_columns():
     print("test_rename_columns() passed")
 
 # Existing NumPy tests from previous artifact remain the same
-'''
+
 def test_create_1d_array():
     arr = assignment.create_1d_array()
     assert isinstance(arr, np.ndarray), "Must return a NumPy array"
@@ -103,12 +103,3 @@ def test_array_operations():
     assert np.isclose(result[1], 1.4142, atol=0.1), "Standard deviation check"
     assert result[2] == 5, "Max value should be 5"
 
-'''
-# Run the tests
-test_create_1d_array()
-test_create_2d_array()
-test_array_operations()
-test_read_csv_file()
-test_handle_missing_values()
-test_select_data()
-test_rename_columns()
